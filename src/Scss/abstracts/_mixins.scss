@@ -1,0 +1,84 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin retina-image($image, $type: "png") {
+  background-image: url("#{$image}.#{$type}");
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url("#{$image}@2x.#{$type}");
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-container(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-item($grow: 0, $shrink: 1, $basis: auto) {
+  flex: $grow $shrink $basis;
+}
+
+@mixin grid-container($columns: 2, $rows: auto, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+@mixin grid-item(
+  $column-start: auto,
+  $column-end: auto,
+  $row-start: auto,
+  $row-end: auto
+) {
+  grid-column: $column-start / $column-end;
+  grid-row: $row-start / $row-end;
+}
+
+@mixin auto-grid($min-width: 200px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin pseudo-element-extended(
+  $position: absolute,
+  $content: "",
+  $width: auto,
+  $height: auto,
+  $background: none,
+  $display: block
+) {
+  content: $content;
+  position: $position;
+  display: $display;
+  width: $width;
+  height: $height;
+  background: $background;
+}
