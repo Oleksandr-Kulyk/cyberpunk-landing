@@ -1,0 +1,35 @@
+.hero-section {
+  background: url("../images/hero-section-bg.webp") center/cover no-repeat;
+  &__container {
+    position: relative;
+    min-height: 100rem;
+    background-color: transparent;
+  }
+  &__content-box {
+    width: 100%;
+    max-width: 625px;
+    padding: 7rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $color-yellow;
+    clip-path: polygon(
+      8.06% 0%,
+      100% 0%,
+      100% 86.5%,
+      91.94% 100%,
+      0% 100%,
+      0% 13.51%
+    );
+    @media (max-width: 740px) {
+      padding: 40px;
+    }
+    @media (max-width: 480px) {
+      bottom: -33px;
+    }
+  }
+  &__title {
+    margin-bottom: 2.5rem;
+    max-width: 48.5rem;
+  }
+}

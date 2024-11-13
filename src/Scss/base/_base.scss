@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 130rem;
+  padding: 0 10px;
+  margin: 0 auto;
+  @media (max-width: 1024px) {
+    padding: 0 36px;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 0 12px;
+  }
+}

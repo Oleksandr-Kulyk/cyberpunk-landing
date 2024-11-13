@@ -1,0 +1,16 @@
+.header {
+  padding-top: 2rem;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  &__container {
+    @include flex-container(row, space-between, center);
+    @media (max-width: 740px) {
+      flex-direction: column;
+    }
+  }
+  &__logo {
+    width: 29.6rem;
+    height: 7.4rem;
+  }
+}

@@ -1,0 +1,14 @@
+.file-input {
+  height: 12rem;
+  width: 100%;
+  border: 1px dashed $text-color;
+  @include flex-center;
+  &__label {
+    display: block;
+    text-decoration: underline;
+  }
+  &__text {
+    display: block;
+    text-align: center;
+  }
+}

@@ -1,0 +1,36 @@
+.btn {
+  background-color: $color-black;
+  border: 2px solid $color-black;
+  display: inline-block;
+  padding: 2rem 5rem;
+  text-decoration: none;
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 4rem;
+  text-align: center;
+  transition: 0.3s color, 0.3s background-color, 0.1s transform;
+  &:link,
+  &:visited {
+    color: $color-yellow;
+    background-color: $color-black;
+  }
+  &:hover {
+    color: $color-black;
+    background-color: transparent;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+  &--yellow {
+    background-color: $color-yellow;
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $color-white;
+      color: $color-white;
+    }
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}

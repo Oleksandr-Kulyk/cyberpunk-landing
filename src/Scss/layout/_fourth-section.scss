@@ -1,0 +1,47 @@
+.fourth-section {
+  background-color: $color-yellow;
+  &__container {
+    padding: 7rem 1rem;
+    @include flex-container($gap: 3.2rem);
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  &__img {
+    width: 100%;
+    max-width: 100%;
+  }
+  &__picture {
+    display: block;
+  }
+  &__icon-container {
+    height: 8rem;
+    @include flex-container($justify: center, $align: center, $gap: 3rem);
+    @media (max-width: 1024px) {
+      height: 100%;
+      max-height: 23rem;
+      flex-direction: column;
+    }
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+  }
+  &__icon {
+    display: block;
+    height: 100%;
+    &:first-child {
+      width: 8rem;
+    }
+    &:nth-child(2) {
+      width: 9rem;
+    }
+  }
+  &__right-wrapper {
+    & > * {
+      margin-bottom: 2.5rem;
+    }
+  }
+  &__advantages {
+    margin-bottom: 4rem;
+  }
+}

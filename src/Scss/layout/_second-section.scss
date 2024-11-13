@@ -1,0 +1,38 @@
+.second-section {
+  padding: 7rem 0;
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+  &__text {
+    max-width: 95rem;
+    margin-bottom: 7rem;
+  }
+  &__image {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    flex-shrink: 1;
+  }
+  &__img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__small-images-container {
+    max-width: 100%;
+    @include flex-container($direction: column, $gap: 3.2rem);
+    @media (max-width: 1024px) {
+      flex-direction: row;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+  &__pictures-container {
+    max-width: 100%;
+    @include flex-container($gap: 3.2rem);
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+}

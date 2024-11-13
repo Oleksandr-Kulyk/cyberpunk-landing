@@ -1,0 +1,15 @@
+.checkbox {
+  @include flex-container($align: center);
+  &::before {
+    @include pseudo-element-extended(
+      $position: static,
+      $width: 14px,
+      $height: 14px,
+      $background: transparent
+    );
+    border: 1px solid $text-color;
+  }
+  &__input:checked + &::before {
+    background: url("../images/checkbox.svg") center/auto no-repeat;
+  }
+}

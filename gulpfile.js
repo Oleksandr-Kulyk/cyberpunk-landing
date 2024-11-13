@@ -28,7 +28,7 @@ function building() {
       "src/**/*.html",
       "src/images/*.*",
       "src/icons/sprite.svg",
-      "src/fonts/*.*",
+      "src/font/*.*",
     ],
     { base: "src", allowEmpty: true, encoding: false }
   ).pipe(dest("dist"));
@@ -44,7 +44,7 @@ function watching() {
       baseDir: "src/",
     },
   });
-  watch("src/scss/style.scss", styles);
+  watch("src/scss/**/*.scss", styles);
   watch("src/js/script.js", scripts);
   watch("src/**/*.html").on("change", browserSyncInstance.reload);
   watch("src/images/src", images);

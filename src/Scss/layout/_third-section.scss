@@ -1,0 +1,95 @@
+.third-section {
+  position: relative;
+  background-color: $color-black;
+  &::before,
+  &::after {
+    @include pseudo-element-extended($width: 100%, $height: 7rem);
+    z-index: 2;
+    left: 0;
+  }
+  &::before {
+    background: url("../images/third_section_top_BG.svg");
+    top: 0;
+  }
+  &::after {
+    background: url("../images/third_section_bot_bg.svg");
+    bottom: 0;
+  }
+  &__container {
+    padding: 7rem 1rem;
+    @include flex-container($direction: column, $gap: 2.5rem);
+  }
+  &__heading {
+    margin-bottom: 4rem;
+    @include flex-container($align: end, $gap: 3.2rem);
+    &::before {
+      @include pseudo-element-extended(
+        $position: static,
+        $width: 13rem,
+        $height: 13rem,
+        $background: url("../images/action-logo.svg") center/cover no-repeat
+      );
+      border: $dashed-border;
+      @media (max-width: 480px) {
+        width: 6.2rem;
+        height: 6.2rem;
+      }
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  &__text {
+    max-width: 95rem;
+  }
+  &__content-wrapper {
+    width: 100%;
+    @include flex-container();
+    @media (max-width: 640px) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__form {
+    width: 100%;
+    max-width: 46rem;
+    @media (max-width: 640px) {
+      max-width: 100%;
+    }
+  }
+  &__pictures-wrapper {
+    width: 100%;
+    max-width: 50%;
+    @include flex-container();
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 640px) {
+      max-width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      border: $dashed-border;
+    }
+  }
+  &__image {
+    display: block;
+    width: 50%;
+    &:first-child {
+      z-index: 2;
+    }
+    @media (max-width: 640px) {
+      width: 100%;
+    }
+  }
+  &__img {
+    @media (max-width: 1270px) {
+      max-width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
